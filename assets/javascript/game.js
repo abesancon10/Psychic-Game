@@ -33,5 +33,9 @@ var guessChoices = [];
 
 document.onkeyup = function(event) {
   var userGuess = event.key;
+
+  var computerAnswer = computerChoices [Math.floor(Math.random() * computerChoices.length)];
+  console.log(computerAnswer)
   console.log(userGuess)
+  
 };
