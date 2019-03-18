@@ -64,6 +64,7 @@ document.onkeyup = function(event) {
     "y",
     "z"
   ];
+  console.log(userGuess)
 
   if (userChoices.indexOf(userGuess) > -1) {
     if (userGuess === computerAnswer) {
@@ -71,9 +72,15 @@ document.onkeyup = function(event) {
       guessLeft = 9;
       guessChoices = [];
     }
-}
-    if (userGuess !== computerAnswer) {
-        guessLeft = -1;
-    }
   }
-
+  if (userGuess !== computerAnswer) {
+    guessLeft = --
+  }
+  if (guessLeft === 0) {
+    losses++;
+    guessLeft = 9;
+    guessChoices = [];
+  }
+};
+console.log(guessLeft);
+console.log(computerChoices);
