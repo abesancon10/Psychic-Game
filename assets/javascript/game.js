@@ -26,17 +26,7 @@ var computerChoices = [
   "y",
   "z"
 ];
-var win = 0;
-var losses = 0;
-var guessLeft = 9;
-var guessChoices = [];
-
-document.onkeyup = function(event) {
-  var userGuess = event.key;
-
-  var computerAnswer =
-    computerChoices[Math.floor(Math.random() * computerChoices.length)];
-  var userChoices = [
+var userChoices = [
     "a",
     "b",
     "c",
@@ -64,14 +54,29 @@ document.onkeyup = function(event) {
     "y",
     "z"
   ];
+var win = 0;
+var losses = 0;
+var guessLeft = 9;
+var guessChoices = [];
+
+document.onkeyup = function(event) {
+  var userChoices = event.key;
+
+  var computerAnswer =
+    computerChoices[Math.floor(Math.random() * computerChoices.length)];
+  //causes answer to change every time a button is clicked
+
 
   if (userGuess === computerAnswer) {
     win++;
     guessLeft = 9;
     guessChoices = [];
   } else if (userGuess !== computerAnswer) {
-    guessLeft--; //this looks like it works to well; does not reset after 9 incorrect
-  } else if (guessLeft < 0) {
+    guessLeft--
+
+  }
+  //it works now; experimenting with loops = waste for this
+  else if (guessLeft === 0) {
     losses++;
     guessLeft = 9;
     guessChoices = [];
@@ -80,4 +85,5 @@ document.onkeyup = function(event) {
   console.log(userGuess);
   console.log(win);
   console.log(losses);
+  console.log(computerAnswer);
 };
