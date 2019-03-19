@@ -64,23 +64,20 @@ document.onkeyup = function(event) {
     "y",
     "z"
   ];
-  console.log(userGuess)
 
-  if (userChoices.indexOf(userGuess) > -1) {
-    if (userGuess === computerAnswer) {
-      win++;
-      guessLeft = 9;
-      guessChoices = [];
-    }
-  }
-  if (userGuess !== computerAnswer) {
-    guessLeft = --
-  }
-  if (guessLeft === 0) {
+  if (userGuess === computerAnswer) {
+    win++;
+    guessLeft = 9;
+    guessChoices = [];
+  } else if (userGuess !== computerAnswer) {
+    guessLeft--; //this looks like it works to well; does not reset after 9 incorrect
+  } else if (guessLeft < 0) {
     losses++;
     guessLeft = 9;
     guessChoices = [];
-  }
+  } //try a loop
+  console.log(guessLeft);
+  console.log(userGuess);
+  console.log(win);
+  console.log(losses);
 };
-console.log(guessLeft);
-console.log(computerChoices);
