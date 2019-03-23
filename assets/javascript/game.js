@@ -81,6 +81,7 @@ document.onkeyup = function(event) {
   }
 
   document.querySelector("#lose").innerHTML = losses;
+  document.querySelector("#win").innerHTML = win;
 
   console.log(guessLeft);
   console.log(userGuess);
