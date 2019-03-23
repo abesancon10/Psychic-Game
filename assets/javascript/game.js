@@ -75,10 +75,13 @@ document.onkeyup = function(event) {
     document.querySelector("#numLeft").innerHTML = guessLeft--;
   }
 
-  if (guessLeft < 1) {
+  if (guessLeft < 0) {
     losses++;
     guessLeft = 9;
   }
+
+  document.querySelector("#lose").innerHTML = losses;
+
   console.log(guessLeft);
   console.log(userGuess);
   console.log(win);
