@@ -6,22 +6,29 @@
 
   <body>
     <h1>The Psychic Game</h1>
-
-    <p>
+    <div class="instructions">
       Guess what letter I'm thinking of
-    </p>
-    <br />
-    <br />
-    <p>Wins: <div id="win"></div></p>
-    <br />
-    <br />
-    <p>Losses: <div id="lose"></div></p>
-    <br />
-    <br />
-    <p>Guesses Left: <div id="numLeft"></div></p>
-    <br />
-    <br />
-    <p>Your Guesses so far: <div id="guess"></div></p>
+    </div>
+
+    <div class="wins">
+      Wins:
+      <div id="win"></div>
+    </div>
+
+    <div class="losses">
+      Losses:
+      <div id="lose"></div>
+    </div>
+
+    <div class="guessLeft">
+      Guesses Left:
+      <div id="numLeft"></div>
+    </div>
+
+    <div class="userGuess">
+      Your Guesses so far:
+      <div id="guess"></div>
+    </div>
   </body>
   <script src="./assets/javascript/game.js"></script>
 </html>

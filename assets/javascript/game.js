@@ -29,32 +29,34 @@ var computerChoices = [
 var win = 0;
 var losses = 0;
 var guessLeft = 9;
-var guessChoices = ["a",
-"b",
-"c",
-"d",
-"e",
-"f",
-"g",
-"h",
-"i",
-"j",
-"k",
-"l",
-"m",
-"n",
-"o",
-"p",
-"q",
-"r",
-"s",
-"t",
-"u",
-"v",
-"w",
-"x",
-"y",
-"z"];
+var guessChoices = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z"
+];
 
 document.onkeyup = function(event) {
   var userGuess = event.key;
@@ -63,20 +65,20 @@ document.onkeyup = function(event) {
     computerChoices[Math.floor(Math.random() * computerChoices.length)];
   //causes answer to change every time a button is clicked
 
+  document.querySelector("#guess").innerHTML = userGuess;
+
   if (userGuess === computerAnswer) {
     win++;
     guessLeft = 9;
-  } 
-  if (userGuess !== computerAnswer) {
-    document.querySelector("#numLeft").innerHTML = "Guesses Left: " + guessLeft--;
-
   }
-  
-  if (guessLeft === 0) {
+  if (userGuess !== computerAnswer) {
+    document.querySelector("#numLeft").innerHTML = guessLeft--;
+  }
+
+  if (guessLeft < 1) {
     losses++;
     guessLeft = 9;
-    guessChoices = [];
-  } 
+  }
   console.log(guessLeft);
   console.log(userGuess);
   console.log(win);
