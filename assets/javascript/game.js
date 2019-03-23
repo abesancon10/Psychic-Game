@@ -63,15 +63,12 @@ document.onkeyup = function(event) {
     computerChoices[Math.floor(Math.random() * computerChoices.length)];
   //causes answer to change every time a button is clicked
 
-  var userChoices = [
-    
-  ];
-
   if (userGuess === computerAnswer) {
     win++;
     guessLeft = 9;
-  } if (userGuess !== computerAnswer) {
-    guessLeft--
+  } 
+  if (userGuess !== computerAnswer) {
+    document.querySelector("#numLeft").innerHTML = "Guesses Left: " + guessLeft--;
 
   }
   
