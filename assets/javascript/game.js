@@ -75,7 +75,7 @@ document.onkeyup = function(event) {
     document.querySelector("#numLeft").innerHTML = guessLeft--;
   }
 
-  if (guessLeft < 0) {
+  if (guessLeft === -1) {
     losses++;
     guessLeft = 9;
   }
